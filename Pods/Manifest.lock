@@ -1,0 +1,16 @@
+PODS:
+  - FlexibleSteppedProgressBar (0.7.2)
+
+DEPENDENCIES:
+  - FlexibleSteppedProgressBar
+
+SPEC REPOS:
+  trunk:
+    - FlexibleSteppedProgressBar
+
+SPEC CHECKSUMS:
+  FlexibleSteppedProgressBar: 6a781cfed749bf59c69813a8706aa397c342ab5c
+
+PODFILE CHECKSUM: 8ffafec7ae9b32dab41f836f49d1e27e389a8496
+
+COCOAPODS: 1.11.2
