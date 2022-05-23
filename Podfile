@@ -6,6 +6,10 @@ target 'SpaceXFan' do
   use_frameworks!
 
 pod 'FlexibleSteppedProgressBar'
+pod 'Firebase/Core' 
+pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
+pod 'Firebase/Storage'
 
   # Pods for SpaceXFan
 

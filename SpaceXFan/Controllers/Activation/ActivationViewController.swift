@@ -8,7 +8,7 @@
 import UIKit
 import FlexibleSteppedProgressBar
 
-class ActivationViewController: UIViewController,ProgressBarProtocol,BackgroundImageProtocol {
+class ActivationViewController: UIViewController,ProgressBarProtocol,BackgroundImageProtocol,AlertProtocol {
 
     
     //MARK: - Vars
@@ -29,7 +29,25 @@ class ActivationViewController: UIViewController,ProgressBarProtocol,BackgroundI
         
     }
     
+    @IBAction func continueBtnClicked(_ sender: Any) {
+        isEmailVerified()
+    }
     
+    //MARK: - Login user func
+    private func isEmailVerified() {
+        let currentUser = UserDefaults.standard.object(forKey: kCURRENTUSER)
+        let user = User.init(dictionary: currentUser as! NSDictionary)
+        User.loginUserWith(email: user.email, password: user.password) { (error, isEmailVerified) in
+            if error == nil {
+                if isEmailVerified {
+                    self.performSegue(withIdentifier: "goToAccountCreated", sender: nil)
+                } else {
+                    self.alertMessage(titleInput: "Email Doğrulama Hatası",
+                                      messageInput: "Email doğrulanmamış. lütfen mailinize gönderilen doğrulama linkine tıklayın.")
+                }
+            }
+        }
+    }
     
 }
 

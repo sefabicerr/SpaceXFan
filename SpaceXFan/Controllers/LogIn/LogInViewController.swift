@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogInViewController: UIViewController,BackgroundImageProtocol {
+class LogInViewController: UIViewController,BackgroundImageProtocol,AlertProtocol {
 
     //MARK: - IBOutlets
     @IBOutlet weak var emailTextField: UITextField!
@@ -38,10 +38,13 @@ class LogInViewController: UIViewController,BackgroundImageProtocol {
     }
     
     @IBAction func forgotPasswordBtnClicked(_ sender: Any) {
-        
+        resetThePassword()
     }
     
     @IBAction func logInBtnClicked(_ sender: Any) {
+        if textFieldHaveText(){
+            loginUser()
+        }
         
     }
     
@@ -52,6 +55,41 @@ class LogInViewController: UIViewController,BackgroundImageProtocol {
     
     @IBAction func signUpBtnClicked(_ sender: Any) {
         
+    }
+    
+    //MARK: - Textfield have text control
+    private func textFieldHaveText() -> Bool {
+        return (emailTextField.text != "" && passwordTextField.text != "")
+    }
+    
+    //MARK: - Login user func
+    private func loginUser() {
+        User.loginUserWith(email: emailTextField.text!, password: passwordTextField.text!) { (error, isEmailVerified) in
+            if error == nil {
+                if isEmailVerified {
+                    print("mail doğrulanmış")
+                    self.goToRockets()
+                } else {
+                    self.alertMessage(titleInput: "Email Doğrulama Hatası",
+                                      messageInput: "Email doğrulanmamış. lütfen mailinize gönderilen doğrulama linkine tıklayın.")
+                }
+            } else {
+                self.alertMessage(titleInput: "Giriş Hatası",
+                                  messageInput: "Girilen email ya da şifre hatalı. Lütfen kontrol ediniz.")
+            }
+        }
+    }
+    
+    //MARK: - Reset the password func
+    private func resetThePassword(){
+        User.resetPasswordFor(email: emailTextField.text!) { (error) in
+            if error == nil {
+                self.alertMessage(titleInput: "Başarılı", messageInput: "Şifre yenileme maili gönderildi.")
+            } else {
+                let error = error?.localizedDescription
+                self.alertMessage(titleInput: "Başarısız", messageInput: error!)
+            }
+        }
     }
     
     //MARK: - For login screen to rockets screen

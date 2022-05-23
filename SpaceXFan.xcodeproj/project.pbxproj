@@ -11,6 +11,10 @@
 		64186C67283A76870076399C /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64186C66283A76870076399C /* ColorAssets.xcassets */; };
 		64186C6B283A79AA0076399C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64186C6A283A79AA0076399C /* SignUpViewController.swift */; };
 		64186C6E283A7A1F0076399C /* ProgressBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64186C6D283A7A1F0076399C /* ProgressBarProtocol.swift */; };
+		642AC83B283B042900B151A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642AC83A283B042900B151A6 /* User.swift */; };
+		642AC83D283B05C900B151A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 642AC83C283B05C900B151A6 /* GoogleService-Info.plist */; };
+		642AC840283B07E900B151A6 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642AC83F283B07E900B151A6 /* FirebaseCollectionReference.swift */; };
+		642AC843283B0A8400B151A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642AC842283B0A8400B151A6 /* Constants.swift */; };
 		645457D9283A38B10034D4A3 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645457D8283A38B10034D4A3 /* LogInViewController.swift */; };
 		645457E0283A45370034D4A3 /* BackgroundImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645457DF283A45370034D4A3 /* BackgroundImageProtocol.swift */; };
 		646BCCD52839BB5B00BD6862 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646BCCD42839BB5B00BD6862 /* AppDelegate.swift */; };
@@ -58,6 +62,10 @@
 		64186C66283A76870076399C /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		64186C6A283A79AA0076399C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		64186C6D283A7A1F0076399C /* ProgressBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarProtocol.swift; sourceTree = "<group>"; };
+		642AC83A283B042900B151A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		642AC83C283B05C900B151A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		642AC83F283B07E900B151A6 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
+		642AC842283B0A8400B151A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		645457D8283A38B10034D4A3 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		645457DF283A45370034D4A3 /* BackgroundImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageProtocol.swift; sourceTree = "<group>"; };
 		646BCCD12839BB5B00BD6862 /* SpaceXFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceXFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +151,30 @@
 			path = Rockets;
 			sourceTree = "<group>";
 		};
+		642AC839283B041300B151A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				642AC83A283B042900B151A6 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		642AC83E283B07B900B151A6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				642AC83F283B07E900B151A6 /* FirebaseCollectionReference.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		642AC841283B084300B151A6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				642AC842283B0A8400B151A6 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		645457DE283A425B0034D4A3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,9 +210,13 @@
 		646BCCD32839BB5B00BD6862 /* SpaceXFan */ = {
 			isa = PBXGroup;
 			children = (
+				642AC83C283B05C900B151A6 /* GoogleService-Info.plist */,
+				642AC839283B041300B151A6 /* Models */,
 				64186C63283A67450076399C /* Extensions */,
 				645457DE283A425B0034D4A3 /* Protocols */,
 				646BCD042839CC3C00BD6862 /* Controllers */,
+				642AC83E283B07B900B151A6 /* Network */,
+				642AC841283B084300B151A6 /* Helpers */,
 				646BCCD42839BB5B00BD6862 /* AppDelegate.swift */,
 				646BCCD62839BB5B00BD6862 /* SceneDelegate.swift */,
 				646BCCDA2839BB5B00BD6862 /* Main.storyboard */,
@@ -380,6 +416,7 @@
 			files = (
 				646BCCE12839BB5D00BD6862 /* LaunchScreen.storyboard in Resources */,
 				646BCCDE2839BB5D00BD6862 /* Assets.xcassets in Resources */,
+				642AC83D283B05C900B151A6 /* GoogleService-Info.plist in Resources */,
 				64186C67283A76870076399C /* ColorAssets.xcassets in Resources */,
 				646BCCDC2839BB5B00BD6862 /* Main.storyboard in Resources */,
 			);
@@ -509,13 +546,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642AC83B283B042900B151A6 /* User.swift in Sources */,
 				64186C6E283A7A1F0076399C /* ProgressBarProtocol.swift in Sources */,
 				64186C65283A675F0076399C /* UIView+Extension.swift in Sources */,
 				64D99494283A9D8800DA9C02 /* ActivationViewController.swift in Sources */,
 				64186C6B283A79AA0076399C /* SignUpViewController.swift in Sources */,
+				642AC843283B0A8400B151A6 /* Constants.swift in Sources */,
 				645457D9283A38B10034D4A3 /* LogInViewController.swift in Sources */,
 				646BCD062839CC6D00BD6862 /* RocketsViewController.swift in Sources */,
 				646BCCD52839BB5B00BD6862 /* AppDelegate.swift in Sources */,
+				642AC840283B07E900B151A6 /* FirebaseCollectionReference.swift in Sources */,
 				64DC7B26283AE969000C2B03 /* AlertViewProtocol.swift in Sources */,
 				64D99498283AA3E100DA9C02 /* PrivacyViewController.swift in Sources */,
 				645457E0283A45370034D4A3 /* BackgroundImageProtocol.swift in Sources */,

@@ -29,6 +29,7 @@ class AccountCreatedViewController: UIViewController,ProgressBarProtocol,Backgro
     }
     
     @IBAction func logInBtnClicked(_ sender: Any) {
+        
         goToLogin()
     }
   

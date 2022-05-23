@@ -215,7 +215,13 @@
                         <viewLayoutGuide key="safeArea" id="D4d-mh-e25"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="w9f-0m-pBh"/>
+                    <navigationItem key="navigationItem" id="w9f-0m-pBh">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="cqm-4h-6N3">
+                            <connections>
+                                <action selector="logOutClicked:" destination="qRZ-7t-rIQ" id="HuP-6V-gTE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YR8-13-edt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -643,6 +649,7 @@ Consectetur adipiscing elit. In quis porta orci, id semper neque. Morbi vehicula
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="continueBtnClicked:" destination="1Rz-74-Cwm" eventType="touchUpInside" id="CDp-k1-ePA"/>
+                                    <action selector="continueBtnClicked:" destination="JbX-rN-9qK" eventType="touchUpInside" id="SIi-Mv-WMB"/>
                                     <action selector="continueBtnClicked:" destination="hUf-1T-bh1" eventType="touchUpInside" id="VMd-z1-dht"/>
                                     <action selector="continueBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eaI-OB-o8J"/>
                                 </connections>
@@ -664,7 +671,7 @@ Consectetur adipiscing elit. In quis porta orci, id semper neque. Morbi vehicula
                     </view>
                     <navigationItem key="navigationItem" id="ulc-9s-GS7"/>
                     <connections>
-                        <segue destination="zSe-Lh-Oj0" kind="show" identifier="toAccountCreated" id="JL7-8L-MPu"/>
+                        <segue destination="zSe-Lh-Oj0" kind="show" identifier="goToAccountCreated" id="ndS-gc-9LE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LyJ-so-d4C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -763,9 +770,10 @@ Consectetur adipiscing elit. In quis porta orci, id semper neque. Morbi vehicula
         <!--Tab Bar Controller-->
         <scene sceneID="Lnc-vZ-MPZ">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="BRD-8p-l2n" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" automaticallyAdjustsScrollViewInsets="NO" id="BRD-8p-l2n" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mRT-mM-ubI">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

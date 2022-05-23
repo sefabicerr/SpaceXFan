@@ -8,7 +8,7 @@
 import UIKit
 import FlexibleSteppedProgressBar
 
-class PrivacyViewController: UIViewController,ProgressBarProtocol,BackgroundImageProtocol  {
+class PrivacyViewController: UIViewController,ProgressBarProtocol,BackgroundImageProtocol,AlertProtocol  {
 
     //MARK: - IBOutlets
     @IBOutlet weak var continueBtn: UIButton!{
@@ -23,6 +23,7 @@ class PrivacyViewController: UIViewController,ProgressBarProtocol,BackgroundImag
             progressBar.currentIndex = 1
         }
     }
+    var user : User!
     var isMembership = false
     var isPrivacy = false
     
@@ -33,7 +34,6 @@ class PrivacyViewController: UIViewController,ProgressBarProtocol,BackgroundImag
         progressBar = FlexibleSteppedProgressBar()
         createProgressBar(progressBar)
         createBackground(UIImage(named: "spaceXIOsBg")!, UIImageView(frame: self.view.frame))
-        
         
     }
     
@@ -71,10 +71,25 @@ class PrivacyViewController: UIViewController,ProgressBarProtocol,BackgroundImag
     
     
     @IBAction func continueBtnClicked(_ sender: Any) {
+        registerUser()
         
     }
     
+    //MARK: - Register User
+    private func registerUser() {
+        User.registerUserWith(email: user.email, password: user.password) { (error) in
+            if error == nil {
+                print("Kayıt başarılı")
+            } else {
+                print("error:", error!.localizedDescription)
+                self.alertMessage(titleInput: "Hata", messageInput: "Email adresi zaten başka bir hesap tarafından kullanılıyor, lütfen başka bir hesap kullanın.")
+            }
+        }
+    }
 }
+
+
+
 
 //MARK: - To implement flexible func
 extension PrivacyViewController: FlexibleSteppedProgressBarDelegate {

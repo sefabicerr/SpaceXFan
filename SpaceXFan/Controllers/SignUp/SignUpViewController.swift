@@ -28,6 +28,7 @@ class SignUpViewController: UIViewController,ProgressBarProtocol,BackgroundImage
             progressBar.currentIndex = 0
         }
     }
+    //var user : User?
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -37,6 +38,14 @@ class SignUpViewController: UIViewController,ProgressBarProtocol,BackgroundImage
         createProgressBar(progressBar)
         createBackground(UIImage(named: "spaceXIOsBg")!, UIImageView(frame: self.view.frame))
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPrivacy" {
+            let user = sender as? User
+            let VC = segue.destination as! PrivacyViewController
+            VC.user = user
+        }
     }
     
     @IBAction func showPasswordBtnClicked(_ sender: UIButton) {
@@ -51,7 +60,13 @@ class SignUpViewController: UIViewController,ProgressBarProtocol,BackgroundImage
     
     @IBAction func continueBtnClicked(_ sender: Any) {
         if textFieldHaveText(){
-            performSegue(withIdentifier: "toPrivacy", sender: nil)
+            let user = User(userId: "", name: nameTextField.text!,
+                        email: emailTextField.text!,
+                        phone: phoneTextField.text!,
+                        country: countryTextField.text!,
+                            password: passwordTextField.text!)
+            saveUserLocally(userDictionary: userDictionaryFrom(user: user))
+            performSegue(withIdentifier: "toPrivacy", sender: user)
         } else {
             alertMessage(titleInput: "Boş Alan Hatası", messageInput: "Lütfen tüm alanları doldurduğunuzdan emin olun.")
         }
