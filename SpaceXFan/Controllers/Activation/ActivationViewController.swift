@@ -28,6 +28,17 @@ class ActivationViewController: UIViewController,ProgressBarProtocol,BackgroundI
 
         
     }
+    @IBAction func sendAgainBtnClicked(_ sender: Any) {
+        let currentUser = UserDefaults.standard.object(forKey: kCURRENTUSER)
+        let user = User.init(dictionary: currentUser as! NSDictionary)
+        User.resendEmailVerification(email: user.email) { error in
+            if error == nil {
+                self.alertMessage(titleInput: "Mail Gönderildi", messageInput: "Doğrulama maili gönderildi, lütfen kontrol ediniz.")
+            } else {
+                self.alertMessage(titleInput: "Hata", messageInput: "Doğrulama maili gönderilemedi, Lütfen internet bağlantınızı kontrol ediniz.")
+            }
+        }
+    }
     
     @IBAction func continueBtnClicked(_ sender: Any) {
         isEmailVerified()

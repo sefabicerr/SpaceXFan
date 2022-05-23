@@ -107,7 +107,14 @@ class User {
         }
     }
     
-    
+    class func resendEmailVerification(email : String, completion: @escaping (_ error: Error?) -> Void) {
+        Auth.auth().currentUser?.reload() { error in
+            Auth.auth().currentUser?.sendEmailVerification() { error in
+                print("Email doğrulama gönderme hatası")
+                completion(error)
+            }
+        }
+    }
     
     //MARK: - Reset the password request func
     class func resetPasswordFor(email: String, completion: @escaping (_ error: Error?) -> Void) {

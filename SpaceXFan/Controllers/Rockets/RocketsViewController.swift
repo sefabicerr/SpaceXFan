@@ -8,12 +8,24 @@
 import UIKit
 import FirebaseAuth
 
-class RocketsViewController: UIViewController {
+class RocketsViewController: UIViewController,BackgroundImageProtocol {
 
+    //MARK: - IBOutlets
+    @IBOutlet weak var collectionViewRocket: UICollectionView!
+    
+    
+    //MARK: - Vars
+    var rocketList = [Rocket]()
+    var defaultImageList = [UIImage]()
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        createBackground(UIImage(named: "spaceXIOsBg")!, UIImageView(frame: self.view.frame))
+        showAllRockets()
+        registerCells()
+        defaultImageList = [UIImage(named: "6486482399SpacexFalconHeavyPngTransparentPng")!,UIImage(named: "spaceXDragon")!,UIImage(named: "spaceXStarship")!,UIImage(named: "6486482399SpacexFalconHeavyPngTransparentPng")!]
         
     }
     
@@ -21,6 +33,23 @@ class RocketsViewController: UIViewController {
     @IBAction func logOutClicked(_ sender: Any) {
         logOut()
     }
+    
+    //MARK: - For collectionviewcell set
+   private func registerCells() {
+       collectionViewRocket.register(UINib(nibName: RocketCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: RocketCollectionViewCell.identifier)
+    }
+    
+    private func showAllRockets() {
+        Servicee.showAllRockets() { response in
+            self.rocketList = response
+            print("\(self.rocketList[3].name)")
+            print(self.rocketList[1].flickrImages.count)
+            DispatchQueue.main.async {
+                self.collectionViewRocket.reloadData()
+            }
+        }
+    }
+
 
     //MARK: - For logout request func
     private func logOut() {
@@ -35,4 +64,22 @@ class RocketsViewController: UIViewController {
         }
     }
 
+}
+
+
+extension RocketsViewController: UICollectionViewDelegate,UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        rocketList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RocketCollectionViewCell.identifier, for: indexPath) as! RocketCollectionViewCell
+        cell.rocketImage.image = defaultImageList[indexPath.row]
+        cell.setup(rocketList[indexPath.row])
+        return cell
+    }
+    
+    
+    
+    
 }

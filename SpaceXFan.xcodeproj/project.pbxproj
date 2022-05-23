@@ -15,6 +15,12 @@
 		642AC83D283B05C900B151A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 642AC83C283B05C900B151A6 /* GoogleService-Info.plist */; };
 		642AC840283B07E900B151A6 /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642AC83F283B07E900B151A6 /* FirebaseCollectionReference.swift */; };
 		642AC843283B0A8400B151A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642AC842283B0A8400B151A6 /* Constants.swift */; };
+		642AC84E283B9E9900B151A6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642AC84D283B9E9900B151A6 /* CardView.swift */; };
+		642AC851283BA41700B151A6 /* RocketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642AC84F283BA41700B151A6 /* RocketCollectionViewCell.swift */; };
+		642AC852283BA41700B151A6 /* RocketCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642AC850283BA41700B151A6 /* RocketCollectionViewCell.xib */; };
+		642AC855283BA69C00B151A6 /* DetailRocketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642AC854283BA69C00B151A6 /* DetailRocketViewController.swift */; };
+		642AC857283BA75600B151A6 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642AC856283BA75600B151A6 /* Rocket.swift */; };
+		642AC859283BA97200B151A6 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642AC858283BA97200B151A6 /* NetworkService.swift */; };
 		645457D9283A38B10034D4A3 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645457D8283A38B10034D4A3 /* LogInViewController.swift */; };
 		645457E0283A45370034D4A3 /* BackgroundImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645457DF283A45370034D4A3 /* BackgroundImageProtocol.swift */; };
 		646BCCD52839BB5B00BD6862 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646BCCD42839BB5B00BD6862 /* AppDelegate.swift */; };
@@ -66,6 +72,12 @@
 		642AC83C283B05C900B151A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		642AC83F283B07E900B151A6 /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
 		642AC842283B0A8400B151A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		642AC84D283B9E9900B151A6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		642AC84F283BA41700B151A6 /* RocketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCollectionViewCell.swift; sourceTree = "<group>"; };
+		642AC850283BA41700B151A6 /* RocketCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RocketCollectionViewCell.xib; sourceTree = "<group>"; };
+		642AC854283BA69C00B151A6 /* DetailRocketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRocketViewController.swift; sourceTree = "<group>"; };
+		642AC856283BA75600B151A6 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		642AC858283BA97200B151A6 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		645457D8283A38B10034D4A3 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		645457DF283A45370034D4A3 /* BackgroundImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageProtocol.swift; sourceTree = "<group>"; };
 		646BCCD12839BB5B00BD6862 /* SpaceXFan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceXFan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				642AC83A283B042900B151A6 /* User.swift */,
+				642AC856283BA75600B151A6 /* Rocket.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				642AC83F283B07E900B151A6 /* FirebaseCollectionReference.swift */,
+				642AC858283BA97200B151A6 /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -173,6 +187,40 @@
 				642AC842283B0A8400B151A6 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		642AC846283B9DFB00B151A6 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				642AC84C283B9E8600B151A6 /* CardView */,
+				642AC84B283B9E3E00B151A6 /* RocketCell */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		642AC84B283B9E3E00B151A6 /* RocketCell */ = {
+			isa = PBXGroup;
+			children = (
+				642AC84F283BA41700B151A6 /* RocketCollectionViewCell.swift */,
+				642AC850283BA41700B151A6 /* RocketCollectionViewCell.xib */,
+			);
+			path = RocketCell;
+			sourceTree = "<group>";
+		};
+		642AC84C283B9E8600B151A6 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				642AC84D283B9E9900B151A6 /* CardView.swift */,
+			);
+			path = CardView;
+			sourceTree = "<group>";
+		};
+		642AC853283BA65200B151A6 /* DetailRocket */ = {
+			isa = PBXGroup;
+			children = (
+				642AC854283BA69C00B151A6 /* DetailRocketViewController.swift */,
+			);
+			path = DetailRocket;
 			sourceTree = "<group>";
 		};
 		645457DE283A425B0034D4A3 /* Protocols */ = {
@@ -212,9 +260,10 @@
 			children = (
 				642AC83C283B05C900B151A6 /* GoogleService-Info.plist */,
 				642AC839283B041300B151A6 /* Models */,
-				64186C63283A67450076399C /* Extensions */,
-				645457DE283A425B0034D4A3 /* Protocols */,
+				642AC846283B9DFB00B151A6 /* Custom Views */,
 				646BCD042839CC3C00BD6862 /* Controllers */,
+				645457DE283A425B0034D4A3 /* Protocols */,
+				64186C63283A67450076399C /* Extensions */,
 				642AC83E283B07B900B151A6 /* Network */,
 				642AC841283B084300B151A6 /* Helpers */,
 				646BCCD42839BB5B00BD6862 /* AppDelegate.swift */,
@@ -254,6 +303,7 @@
 				64D99495283A9D9000DA9C02 /* Activation */,
 				64D9949B283AB56400DA9C02 /* AccountCreated */,
 				64186C6C283A79B90076399C /* Rockets */,
+				642AC853283BA65200B151A6 /* DetailRocket */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -416,6 +466,7 @@
 			files = (
 				646BCCE12839BB5D00BD6862 /* LaunchScreen.storyboard in Resources */,
 				646BCCDE2839BB5D00BD6862 /* Assets.xcassets in Resources */,
+				642AC852283BA41700B151A6 /* RocketCollectionViewCell.xib in Resources */,
 				642AC83D283B05C900B151A6 /* GoogleService-Info.plist in Resources */,
 				64186C67283A76870076399C /* ColorAssets.xcassets in Resources */,
 				646BCCDC2839BB5B00BD6862 /* Main.storyboard in Resources */,
@@ -546,6 +597,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				642AC851283BA41700B151A6 /* RocketCollectionViewCell.swift in Sources */,
 				642AC83B283B042900B151A6 /* User.swift in Sources */,
 				64186C6E283A7A1F0076399C /* ProgressBarProtocol.swift in Sources */,
 				64186C65283A675F0076399C /* UIView+Extension.swift in Sources */,
@@ -555,11 +607,15 @@
 				645457D9283A38B10034D4A3 /* LogInViewController.swift in Sources */,
 				646BCD062839CC6D00BD6862 /* RocketsViewController.swift in Sources */,
 				646BCCD52839BB5B00BD6862 /* AppDelegate.swift in Sources */,
+				642AC859283BA97200B151A6 /* NetworkService.swift in Sources */,
+				642AC857283BA75600B151A6 /* Rocket.swift in Sources */,
 				642AC840283B07E900B151A6 /* FirebaseCollectionReference.swift in Sources */,
 				64DC7B26283AE969000C2B03 /* AlertViewProtocol.swift in Sources */,
 				64D99498283AA3E100DA9C02 /* PrivacyViewController.swift in Sources */,
 				645457E0283A45370034D4A3 /* BackgroundImageProtocol.swift in Sources */,
 				646BCCD72839BB5B00BD6862 /* SceneDelegate.swift in Sources */,
+				642AC84E283B9E9900B151A6 /* CardView.swift in Sources */,
+				642AC855283BA69C00B151A6 /* DetailRocketViewController.swift in Sources */,
 				64D9949A283AB55700DA9C02 /* AccountCreatedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
