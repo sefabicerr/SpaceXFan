@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64057600283BFFF700BD2160 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640575FF283BFFF700BD2160 /* String+Extension.swift */; };
+		64057604283C00E100BD2160 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64057602283C00E100BD2160 /* DetailCollectionViewCell.swift */; };
+		64057605283C00E100BD2160 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64057603283C00E100BD2160 /* DetailCollectionViewCell.xib */; };
+		64057607283C071900BD2160 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64057606283C071900BD2160 /* Favorite.swift */; };
+		64057609283C17D800BD2160 /* Richability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64057608283C17D800BD2160 /* Richability.swift */; };
+		6405760B283C182A00BD2160 /* FirebaseImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6405760A283C182A00BD2160 /* FirebaseImageDownloader.swift */; };
 		64186C65283A675F0076399C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64186C64283A675F0076399C /* UIView+Extension.swift */; };
 		64186C67283A76870076399C /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64186C66283A76870076399C /* ColorAssets.xcassets */; };
 		64186C6B283A79AA0076399C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64186C6A283A79AA0076399C /* SignUpViewController.swift */; };
@@ -32,6 +38,7 @@
 		646BCCF62839BB5D00BD6862 /* SpaceXFanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646BCCF52839BB5D00BD6862 /* SpaceXFanUITests.swift */; };
 		646BCCF82839BB5D00BD6862 /* SpaceXFanUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646BCCF72839BB5D00BD6862 /* SpaceXFanUITestsLaunchTests.swift */; };
 		646BCD062839CC6D00BD6862 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646BCD052839CC6D00BD6862 /* RocketsViewController.swift */; };
+		64AB2B13283C2BF800069866 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AB2B12283C2BF800069866 /* FavoritesViewController.swift */; };
 		64D99494283A9D8800DA9C02 /* ActivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D99493283A9D8800DA9C02 /* ActivationViewController.swift */; };
 		64D99498283AA3E100DA9C02 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D99497283AA3E100DA9C02 /* PrivacyViewController.swift */; };
 		64D9949A283AB55700DA9C02 /* AccountCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D99499283AB55700DA9C02 /* AccountCreatedViewController.swift */; };
@@ -64,6 +71,12 @@
 		3AD6DBEB9111022291889553 /* Pods-SpaceXFanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceXFanTests.debug.xcconfig"; path = "Target Support Files/Pods-SpaceXFanTests/Pods-SpaceXFanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4CA0D207CC3B5EA34BC7A11F /* Pods_SpaceXFan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceXFan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C60583D96E2950AD3FA8CC /* Pods-SpaceXFan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceXFan.release.xcconfig"; path = "Target Support Files/Pods-SpaceXFan/Pods-SpaceXFan.release.xcconfig"; sourceTree = "<group>"; };
+		640575FF283BFFF700BD2160 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		64057602283C00E100BD2160 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		64057603283C00E100BD2160 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		64057606283C071900BD2160 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		64057608283C17D800BD2160 /* Richability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Richability.swift; sourceTree = "<group>"; };
+		6405760A283C182A00BD2160 /* FirebaseImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseImageDownloader.swift; sourceTree = "<group>"; };
 		64186C64283A675F0076399C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		64186C66283A76870076399C /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		64186C6A283A79AA0076399C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +106,7 @@
 		646BCCF52839BB5D00BD6862 /* SpaceXFanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXFanUITests.swift; sourceTree = "<group>"; };
 		646BCCF72839BB5D00BD6862 /* SpaceXFanUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXFanUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		646BCD052839CC6D00BD6862 /* RocketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewController.swift; sourceTree = "<group>"; };
+		64AB2B12283C2BF800069866 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		64D99493283A9D8800DA9C02 /* ActivationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationViewController.swift; sourceTree = "<group>"; };
 		64D99497283AA3E100DA9C02 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		64D99499283AB55700DA9C02 /* AccountCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreatedViewController.swift; sourceTree = "<group>"; };
@@ -131,10 +145,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64057601283C00B400BD2160 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				64057602283C00E100BD2160 /* DetailCollectionViewCell.swift */,
+				64057603283C00E100BD2160 /* DetailCollectionViewCell.xib */,
+			);
+			path = DetailCell;
+			sourceTree = "<group>";
+		};
 		64186C63283A67450076399C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				64186C64283A675F0076399C /* UIView+Extension.swift */,
+				640575FF283BFFF700BD2160 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -168,6 +192,7 @@
 			children = (
 				642AC83A283B042900B151A6 /* User.swift */,
 				642AC856283BA75600B151A6 /* Rocket.swift */,
+				64057606283C071900BD2160 /* Favorite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,6 +202,8 @@
 			children = (
 				642AC83F283B07E900B151A6 /* FirebaseCollectionReference.swift */,
 				642AC858283BA97200B151A6 /* NetworkService.swift */,
+				64057608283C17D800BD2160 /* Richability.swift */,
+				6405760A283C182A00BD2160 /* FirebaseImageDownloader.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -192,6 +219,7 @@
 		642AC846283B9DFB00B151A6 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				64057601283C00B400BD2160 /* DetailCell */,
 				642AC84C283B9E8600B151A6 /* CardView */,
 				642AC84B283B9E3E00B151A6 /* RocketCell */,
 			);
@@ -297,6 +325,7 @@
 		646BCD042839CC3C00BD6862 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				64AB2B11283C2BE000069866 /* Favorites */,
 				64186C68283A79740076399C /* LogIn */,
 				64186C69283A798A0076399C /* SignUp */,
 				64D99496283AA3C800DA9C02 /* Privacy */,
@@ -306,6 +335,14 @@
 				642AC853283BA65200B151A6 /* DetailRocket */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		64AB2B11283C2BE000069866 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				64AB2B12283C2BF800069866 /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		64D99495283A9D9000DA9C02 /* Activation */ = {
@@ -465,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				646BCCE12839BB5D00BD6862 /* LaunchScreen.storyboard in Resources */,
+				64057605283C00E100BD2160 /* DetailCollectionViewCell.xib in Resources */,
 				646BCCDE2839BB5D00BD6862 /* Assets.xcassets in Resources */,
 				642AC852283BA41700B151A6 /* RocketCollectionViewCell.xib in Resources */,
 				642AC83D283B05C900B151A6 /* GoogleService-Info.plist in Resources */,
@@ -597,19 +635,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64AB2B13283C2BF800069866 /* FavoritesViewController.swift in Sources */,
 				642AC851283BA41700B151A6 /* RocketCollectionViewCell.swift in Sources */,
+				64057600283BFFF700BD2160 /* String+Extension.swift in Sources */,
 				642AC83B283B042900B151A6 /* User.swift in Sources */,
 				64186C6E283A7A1F0076399C /* ProgressBarProtocol.swift in Sources */,
 				64186C65283A675F0076399C /* UIView+Extension.swift in Sources */,
 				64D99494283A9D8800DA9C02 /* ActivationViewController.swift in Sources */,
 				64186C6B283A79AA0076399C /* SignUpViewController.swift in Sources */,
+				6405760B283C182A00BD2160 /* FirebaseImageDownloader.swift in Sources */,
 				642AC843283B0A8400B151A6 /* Constants.swift in Sources */,
 				645457D9283A38B10034D4A3 /* LogInViewController.swift in Sources */,
 				646BCD062839CC6D00BD6862 /* RocketsViewController.swift in Sources */,
+				64057607283C071900BD2160 /* Favorite.swift in Sources */,
 				646BCCD52839BB5B00BD6862 /* AppDelegate.swift in Sources */,
+				64057604283C00E100BD2160 /* DetailCollectionViewCell.swift in Sources */,
 				642AC859283BA97200B151A6 /* NetworkService.swift in Sources */,
 				642AC857283BA75600B151A6 /* Rocket.swift in Sources */,
 				642AC840283B07E900B151A6 /* FirebaseCollectionReference.swift in Sources */,
+				64057609283C17D800BD2160 /* Richability.swift in Sources */,
 				64DC7B26283AE969000C2B03 /* AlertViewProtocol.swift in Sources */,
 				64D99498283AA3E100DA9C02 /* PrivacyViewController.swift in Sources */,
 				645457E0283A45370034D4A3 /* BackgroundImageProtocol.swift in Sources */,

@@ -94,7 +94,7 @@ class LogInViewController: UIViewController,BackgroundImageProtocol,AlertProtoco
     
     //MARK: - For login screen to rockets screen
     func goToRockets(){
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "RocketsVC") as! RocketsViewController
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
         controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .coverVertical
         self.present(controller, animated: true, completion: nil)

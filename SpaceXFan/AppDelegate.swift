@@ -11,7 +11,7 @@ import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+   // Thread 1: "[<SpaceXFan.DetailRocketViewController 0x13c20cb50> setValue:forUndefinedKey:]: this class is not //key value coding-compliant for the key payloadToLeoLbl."
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

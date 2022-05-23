@@ -34,15 +34,26 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
         logOut()
     }
     
+    
     //MARK: - For collectionviewcell set
    private func registerCells() {
        collectionViewRocket.register(UINib(nibName: RocketCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: RocketCollectionViewCell.identifier)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toRocketDetail" {
+            let rocket = sender as? Rocket
+            let VC = segue.destination as! DetailRocketViewController
+            VC.rocket = rocket
+        }
+    }
+
+    
     private func showAllRockets() {
         Servicee.showAllRockets() { response in
             self.rocketList = response
             print("\(self.rocketList[3].name)")
+            print("\(self.rocketList[3].mass.kg) \(self.rocketList[2].mass.lb)")
             print(self.rocketList[1].flickrImages.count)
             DispatchQueue.main.async {
                 self.collectionViewRocket.reloadData()
@@ -55,6 +66,7 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
     private func logOut() {
         do{
             try Auth.auth().signOut()
+            //UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
             let controller = storyboard?.instantiateViewController(withIdentifier: "LogInVC") as! LogInViewController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .partialCurl
@@ -77,6 +89,11 @@ extension RocketsViewController: UICollectionViewDelegate,UICollectionViewDataSo
         cell.rocketImage.image = defaultImageList[indexPath.row]
         cell.setup(rocketList[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let rocket = rocketList[indexPath.row]
+        performSegue(withIdentifier: "toRocketDetail", sender: rocket)
     }
     
     
