@@ -9,6 +9,7 @@ import UIKit
 
 class DetailRocketViewController: UIViewController {
 
+    //MARK: IBOutlets
     @IBOutlet weak var colectionView: UICollectionView!
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var favImage: UIImageView!
@@ -19,17 +20,15 @@ class DetailRocketViewController: UIViewController {
     @IBOutlet weak var enginesType: UILabel!
     @IBOutlet weak var firstFlightLbl: UILabel!
     
-    
-    
-    
-    
+    //MARK: - Vars
     var imageList = [String]()
-    var imageList2 = [UIImage]()
+    var defaultImageList = [UIImage]()
     var rocket : Rocket?
+    var image = UIImage()
     var isImageClick = false
     let d = UserDefaults.standard
     
-    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,10 +38,11 @@ class DetailRocketViewController: UIViewController {
         getFavorite()
         
         self.view.backgroundColor = .darkGray
-        //print(imageListCell.count)
+        headerImage.image = image
+        defaultImageList.append(image)
     }
     
-    //MARK: -For fav image
+    //MARK: -For fav image clicked
     private func createGestureRecognizer() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changeImage(tapGestureRecognizer:)))
         favImage.isUserInteractionEnabled = true
@@ -87,19 +87,29 @@ class DetailRocketViewController: UIViewController {
         
         if let rocket = rocket {
             print("\(rocket.id)")
-            let fav = Favorite(rocketId: rocket.id, userId: User.currentId(), rocketName: rocket.name, description: rocket.welcomeDescription, height: "\(rocket.height)", diameter: "\(rocket.diameter)", mass: "\(rocket.mass)", enginesType: rocket.engines.type, firstFlight: rocket.firstFlight, imageLink: rocket.flickrImages)
+            let docId = FirebaseReference(.Favorite).document().documentID
+            let fav = Favorite(favId: docId,rocketId: rocket.id, userId: User.currentId(), rocketName: rocket.name, description: rocket.welcomeDescription, height: "\(rocket.height.meters!) m / \(rocket.height.feet!) ft", diameter: "\(rocket.diameter.meters!) m / \(rocket.diameter.feet!) ft", mass: "\(rocket.mass.kg)/\(rocket.mass.lb) lb", enginesType: rocket.engines.type, firstFlight: rocket.firstFlight, imageLink: rocket.flickrImages)
             
+            if defaultImageList.count > 0 {
+                uploadImages(images: defaultImageList, itemId: fav.favId!) { imageLinkArray in
+                    fav.defaultImageLinks = imageLinkArray
+                    saveFavoriteToFirebase(favorite: fav)
+                    self.d.set(fav.favId, forKey: fav.rocketId)
+                }
+            } else {
                 saveFavoriteToFirebase(favorite: fav)
-                self.d.set(fav.favId, forKey: fav.rocketId)
+            }
         }
     }
     
+    //MARK: - Delete favorite from firebase
     private func deleteFavorite(){
         let favoriteId = d.string(forKey: rocket!.id)
         deleteToFirebase(with: favoriteId!)
         d.removeObject(forKey: rocket!.id)
     }
     
+    //MARK: - get all favorite rocket
     private func getFavorite() {
         let favoriteId = d.string(forKey: rocket!.id)
         
@@ -112,9 +122,6 @@ class DetailRocketViewController: UIViewController {
             }
         }
     }
-    
-    
-
 }
 
 extension DetailRocketViewController: UICollectionViewDelegate,UICollectionViewDataSource {
@@ -125,7 +132,7 @@ extension DetailRocketViewController: UICollectionViewDelegate,UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let image = imageList[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCollectionViewCell.identifier, for: indexPath) as! DetailCollectionViewCell
-        cell.setup(index: indexPath.row, image)
+        cell.setup(image)
         return cell
     }
     

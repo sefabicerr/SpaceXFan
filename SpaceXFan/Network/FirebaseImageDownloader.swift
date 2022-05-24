@@ -76,7 +76,7 @@ func downloadImages(imageUrls: [String], completion: @escaping (_ images: [UIIma
     
     for link in imageUrls {
         
-        let url = NSURL(string: link)
+        let url = link.asUrl
         let downloadQueu = DispatchQueue(label: "imageDownloadQueu")
         
         downloadQueu.async {

@@ -9,7 +9,7 @@ import Foundation
 
 
 //MARK: - IDS and KEYS
-public let kFILEREFERENCE = "gs://yummieemailpaogin.appspot.com"
+public let kFILEREFERENCE = "gs://spacexfan-92ff5.appspot.com"
 
 //MARK: -Firebase Headers
 public let kUSER_PATH = "User"
@@ -39,3 +39,4 @@ public let kMASS = "mass"
 public let kENGINESTYPE = "enginesType"
 public let kFIRSTFLIGHT = "firstFlight"
 public let kIMAGELINK = "imageLink"
+public let kDEFAULTIMAGELINK = "defaultImageLink"

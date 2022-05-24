@@ -17,6 +17,8 @@ class LogInViewController: UIViewController,BackgroundImageProtocol,AlertProtoco
         }
     }
     
+    var window : UIWindow?
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,11 +99,9 @@ class LogInViewController: UIViewController,BackgroundImageProtocol,AlertProtoco
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
         controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .coverVertical
-        self.present(controller, animated: true, completion: nil)
-    }
-    
-    
-    
+        present(controller, animated: true, completion: nil)
+
+    } 
 }
 
 

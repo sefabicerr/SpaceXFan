@@ -19,9 +19,13 @@ class Favorite {
     var enginesType: String
     var firstFlight: String
     var imageLink: [String]
+    var defaultImageLinks: [String]!
     
-    init(rocketId: String, userId: String, rocketName: String, description: String, height: String, diameter: String, mass: String, enginesType: String, firstFlight: String, imageLink: [String]) {
+    init(favId: String, rocketId: String, userId: String, rocketName: String,
+         description: String, height: String, diameter: String, mass: String,
+         enginesType: String, firstFlight: String, imageLink: [String]) {
         
+        self.favId = favId
         self.rocketId = rocketId
         self.userId = userId
         self.rocketName = rocketName
@@ -77,24 +81,26 @@ class Favorite {
         if let image = dictionary[kIMAGELINK] {
             imageLink = image as! [String]
         } else { imageLink = [] }
+        
+        defaultImageLinks = dictionary[kDEFAULTIMAGELINK] as? [String]
     }
 }
 
 
 //MARK: Save items func
 func saveFavoriteToFirebase(favorite: Favorite) {
-    let docId = FirebaseReference(.Favorite).document().documentID
-    favorite.favId = docId
-    FirebaseReference(.Favorite).document(docId).setData(favoriteDictionaryFrom(favorite: favorite) as! [String:Any]) { (error) in
+    //let docId = FirebaseReference(.Favorite).document().documentID
+    //favorite.favId = docId
+    FirebaseReference(.Favorite).document(favorite.favId!).setData(favoriteDictionaryFrom(favorite: favorite) as! [String:Any]) { (error) in
         if error != nil {
-            print("kullanıcı kayıt hatası \(error!.localizedDescription)")
+            print("Favori kayıt hatası \(error!.localizedDescription)")
         }
     }
 }
 
 //MARK: For favorite to dictionary func
 func favoriteDictionaryFrom(favorite: Favorite) -> NSDictionary {
-    return NSDictionary(objects: [favorite.favId, favorite.rocketId, favorite.userId, favorite.rocketName, favorite.description, favorite.height, favorite.diameter, favorite.mass, favorite.enginesType, favorite.firstFlight, favorite.imageLink], forKeys: [kFAVID as NSCopying,kROCKETID as NSCopying, kUSERID as NSCopying, kROCKETNAME as NSCopying,kDESCRIPTION as NSCopying,kHEIGHT as NSCopying,kDIAMETER as NSCopying,kMASS as NSCopying,kENGINESTYPE as NSCopying,kFIRSTFLIGHT as NSCopying,kIMAGELINK as NSCopying])
+    return NSDictionary(objects: [favorite.favId, favorite.rocketId, favorite.userId, favorite.rocketName, favorite.description, favorite.height, favorite.diameter, favorite.mass, favorite.enginesType, favorite.firstFlight, favorite.imageLink, favorite.defaultImageLinks], forKeys: [kFAVID as NSCopying,kROCKETID as NSCopying, kUSERID as NSCopying, kROCKETNAME as NSCopying,kDESCRIPTION as NSCopying,kHEIGHT as NSCopying,kDIAMETER as NSCopying,kMASS as NSCopying,kENGINESTYPE as NSCopying,kFIRSTFLIGHT as NSCopying,kIMAGELINK as NSCopying, kDEFAULTIMAGELINK as NSCopying])
 }
 
 func downloadItemsWithIdFromFirebase(with userId: String, with favId: String, completion: @escaping (_ isFav: Bool) -> Void ) {

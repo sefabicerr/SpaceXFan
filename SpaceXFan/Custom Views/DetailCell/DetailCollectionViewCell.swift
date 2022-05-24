@@ -15,9 +15,8 @@ class DetailCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     
-    func setup(index: Int,_ imageLink: String) {
+    func setup(_ imageLink: String) {
         imageView.kf.setImage(with: imageLink.asUrl)
-        
     }
     
 }

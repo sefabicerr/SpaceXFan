@@ -29,20 +29,8 @@ class AccountCreatedViewController: UIViewController,ProgressBarProtocol,Backgro
     }
     
     @IBAction func logInBtnClicked(_ sender: Any) {
-        
-        goToLogin()
+        navigationController?.popToRootViewController(animated: true)
     }
-  
-    //MARK: For accountCreated screen to login screen
-    func goToLogin(){
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "LogInVC") as! LogInViewController
-        controller.modalPresentationStyle = .fullScreen
-        controller.modalTransitionStyle = .flipHorizontal
-        self.present(controller, animated: true, completion: nil)
-    }
-
-
-
 }
 
 //MARK: - To implement flexible func

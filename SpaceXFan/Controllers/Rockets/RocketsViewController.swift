@@ -17,6 +17,8 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
     //MARK: - Vars
     var rocketList = [Rocket]()
     var defaultImageList = [UIImage]()
+    var rocket : Rocket?
+    var rocketImage = UIImage()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -29,11 +31,9 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
         
     }
     
-
     @IBAction func logOutClicked(_ sender: Any) {
         logOut()
     }
-    
     
     //MARK: - For collectionviewcell set
    private func registerCells() {
@@ -42,13 +42,12 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toRocketDetail" {
-            let rocket = sender as? Rocket
             let VC = segue.destination as! DetailRocketViewController
-            VC.rocket = rocket
+            VC.rocket = self.rocket
+            VC.image = self.rocketImage
         }
     }
 
-    
     private func showAllRockets() {
         Servicee.showAllRockets() { response in
             self.rocketList = response
@@ -61,12 +60,11 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
         }
     }
 
-
     //MARK: - For logout request func
     private func logOut() {
         do{
             try Auth.auth().signOut()
-            //UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
+            UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
             let controller = storyboard?.instantiateViewController(withIdentifier: "LogInVC") as! LogInViewController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .partialCurl
@@ -77,7 +75,6 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
     }
 
 }
-
 
 extension RocketsViewController: UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -92,11 +89,8 @@ extension RocketsViewController: UICollectionViewDelegate,UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let rocket = rocketList[indexPath.row]
-        performSegue(withIdentifier: "toRocketDetail", sender: rocket)
+        self.rocket = rocketList[indexPath.row]
+        self.rocketImage = defaultImageList[indexPath.row]
+        performSegue(withIdentifier: "toRocketDetail", sender: self)
     }
-    
-    
-    
-    
 }
