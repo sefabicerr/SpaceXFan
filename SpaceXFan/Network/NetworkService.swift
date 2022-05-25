@@ -27,5 +27,25 @@ class Servicee {
             }
         }.resume()
     }
+
+
+    final class func showUpcoming(_ completion: @escaping([Upcoming]) -> Void){
+    
+        AF.request(kGETUPCOMING, method: .get).response { response in
+            if let data = response.data{
+                do {
+                    let answer = try JSONDecoder().decode([Upcoming].self, from: data)
+                    DispatchQueue.main.async {
+                        completion(answer)
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                
+                }
+            }
+        }.resume()
+    }
 }
+
+
 

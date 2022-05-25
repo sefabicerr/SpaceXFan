@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import SwiftUI
 
-class FavoritesViewController: UIViewController {
+class FavoritesViewController: UIViewController,AlertProtocol {
 
     //MARK: - IBOutlets
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - Vars
     var rocketList = [Favorite]()
+    let emptyBackground = EmptyBackgroundView(frame: CGRect(x: 0, y: 88, width: 414, height: 700))
+
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -24,7 +27,16 @@ class FavoritesViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getFavoriteRockets()
+        if User.currentUser() == nil {
+            alertMessage(titleInput: "Default giriş", messageInput: "Favorileri görüntülemek için kullanıcı girişi gerekli") { action in
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let logInVC = storyboard.instantiateViewController(identifier: "LogInVC")
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(logInVC)
+            }
+        } else {
+            getFavoriteRockets()
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,6 +57,12 @@ class FavoritesViewController: UIViewController {
         downloadItemsFromFirebase(with: User.currentId()) { allRockets in
             self.rocketList = allRockets
             self.collectionView.reloadData()
+            
+            if !self.rocketList.isEmpty {
+                self.emptyBackground.removeFromSuperview()
+            } else {
+                self.view.addSubview(self.emptyBackground)
+            }
         }
     }
 }

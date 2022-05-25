@@ -41,6 +41,7 @@ class Rocket: Codable {
         case welcomeDescription = "description"
         case id
     }
+    
 
     init(height: Diameter, diameter: Diameter, mass: Mass, firstStage: FirstStage, secondStage: SecondStage, engines: Engines, landingLegs: LandingLegs, payloadWeights: [PayloadWeight], flickrImages: [String], name: String, type: String, active: Bool, stages: Int, boosters: Int, costPerLaunch: Int, successRatePct: Int, firstFlight: String, country: String, company: String, wikipedia: String, welcomeDescription: String, id: String) {
         self.height = height

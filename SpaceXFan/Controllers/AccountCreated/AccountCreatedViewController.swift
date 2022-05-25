@@ -22,10 +22,12 @@ class AccountCreatedViewController: UIViewController,ProgressBarProtocol,Backgro
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.hidesBackButton = true
         progressBar = FlexibleSteppedProgressBar()
         createProgressBar(progressBar)
         createBackground(UIImage(named: "spaceXIOsBg")!, UIImageView(frame: self.view.frame))
        
+        
     }
     
     @IBAction func logInBtnClicked(_ sender: Any) {

@@ -28,7 +28,8 @@ class SignUpViewController: UIViewController,ProgressBarProtocol,BackgroundImage
             progressBar.currentIndex = 0
         }
     }
-    //var user : User?
+    var pickerView = UIPickerView()
+    var countryList = [String]()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -38,6 +39,8 @@ class SignUpViewController: UIViewController,ProgressBarProtocol,BackgroundImage
         createProgressBar(progressBar)
         createBackground(UIImage(named: "spaceXIOsBg")!, UIImageView(frame: self.view.frame))
         
+        countryList = ["Turkey", "Germany", "Poland"]
+        createPicker()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -81,6 +84,34 @@ class SignUpViewController: UIViewController,ProgressBarProtocol,BackgroundImage
                 countryTextField.text != "")
     }
     
+    //MARK: - For create pickerView in country textField
+    func createPicker() {
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        countryTextField.inputView = pickerView
+        let toolBar = UIToolbar()
+        toolBar.tintColor = UIColor.red
+        toolBar.sizeToFit()
+        
+        let saveBtn = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(self.saveBtnClicked))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelBtn = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelBtnClicked))
+        
+        toolBar.setItems([cancelBtn,space,saveBtn], animated: true)
+        countryTextField.inputAccessoryView = toolBar
+    }
+    
+    @objc func cancelBtnClicked(){
+        countryTextField.text = ""
+        countryTextField.placeholder = "Country"
+        view.endEditing(true)
+    }
+    
+    @objc func saveBtnClicked(){
+        view.endEditing(true)
+    }
+
+    
     
 }
 
@@ -105,4 +136,23 @@ extension SignUpViewController: FlexibleSteppedProgressBarDelegate {
         }
         return ""
     }
+}
+
+extension SignUpViewController: UIPickerViewDelegate,UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return countryList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return countryList[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        countryTextField.text = countryList[row]
+    }
+    
 }

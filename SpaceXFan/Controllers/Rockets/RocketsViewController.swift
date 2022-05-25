@@ -19,16 +19,30 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
     var defaultImageList = [UIImage]()
     var rocket : Rocket?
     var rocketImage = UIImage()
+    let appearance = UITabBarAppearance()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         createBackground(UIImage(named: "spaceXIOsBg")!, UIImageView(frame: self.view.frame))
         showAllRockets()
         registerCells()
         defaultImageList = [UIImage(named: "6486482399SpacexFalconHeavyPngTransparentPng")!,UIImage(named: "spaceXDragon")!,UIImage(named: "spaceXStarship")!,UIImage(named: "6486482399SpacexFalconHeavyPngTransparentPng")!]
+
+        createTabBarUI(itemAppearance: appearance.stackedLayoutAppearance)
+        createTabBarUI(itemAppearance: appearance.inlineLayoutAppearance)
+        createTabBarUI(itemAppearance: appearance.compactInlineLayoutAppearance)
+
         
+    }
+    
+    private func createTabBarUI(itemAppearance: UITabBarItemAppearance){
+        itemAppearance.selected.iconColor = UIColor(named: "appColor")
+        appearance.backgroundColor = UIColor.systemGray3
+        tabBarController?.tabBar.standardAppearance = appearance
+        tabBarController?.tabBar.scrollEdgeAppearance = appearance
     }
     
     @IBAction func logOutClicked(_ sender: Any) {
@@ -65,10 +79,10 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
         do{
             try Auth.auth().signOut()
             UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
-            let controller = storyboard?.instantiateViewController(withIdentifier: "LogInVC") as! LogInViewController
-            controller.modalPresentationStyle = .fullScreen
-            controller.modalTransitionStyle = .partialCurl
-            present(controller, animated: true, completion: nil)
+            UserDefaults.standard.synchronize()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let logInVC = storyboard.instantiateViewController(identifier: "LogInVC")
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(logInVC)
         } catch{
             print(error.localizedDescription)
         }

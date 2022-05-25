@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailRocketViewController: UIViewController {
+class DetailRocketViewController: UIViewController,AlertProtocol {
 
     //MARK: IBOutlets
     @IBOutlet weak var colectionView: UICollectionView!
@@ -34,13 +34,21 @@ class DetailRocketViewController: UIViewController {
 
         registerCells()
         setupUIInfo()
+        isLogIn()
         createGestureRecognizer()
-        getFavorite()
         
         self.view.backgroundColor = .darkGray
         headerImage.image = image
         defaultImageList.append(image)
     }
+    
+    //MARK: -User login control func    
+    private func isLogIn() {
+        guard let user = User.currentUser() else {return}
+        getFavorite()
+        print(user.name)
+    }
+    
     
     //MARK: -For fav image clicked
     private func createGestureRecognizer() {
@@ -58,9 +66,17 @@ class DetailRocketViewController: UIViewController {
             tappedImage.image = UIImage(named: "buttonsIconsFavoritesEnable")
             
         } else {
-            saveToFirebase()
-            isImageClick = true
-            tappedImage.image = UIImage(named: "buttonsIconsFavoritesActivePressed")
+            if User.currentUser() != nil {
+                saveToFirebase()
+                isImageClick = true
+                tappedImage.image = UIImage(named: "buttonsIconsFavoritesActivePressed")
+            } else {
+                alertMessage(titleInput: "Default giriş", messageInput: "Favorilere eklemek için kullanıcı girişi gerekli") { action in
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let logInVC = storyboard.instantiateViewController(identifier: "LogInVC")
+                    (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(logInVC)
+                }
+            }
         }
     }
     

@@ -27,6 +27,7 @@ public let kCURRENT = "current"
 
 //MARK: - Api Links
 public let kGETALLROCKETS = "https://api.spacexdata.com/v4/rockets"
+public let kGETUPCOMING = "https://api.spacexdata.com/v4/launches/upcoming"
 
 //MARK: - Favorite
 public let kFAVID = "favId"

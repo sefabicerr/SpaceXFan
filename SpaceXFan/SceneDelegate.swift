@@ -26,6 +26,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = tabBar
         }
     }
+    
+    func changeRootViewController(_ VC: UIViewController, animated: Bool = true) {
+        guard let window = self.window else {
+            return
+        }
+        window.rootViewController = VC
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

@@ -239,7 +239,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Rockets" id="w9f-0m-pBh">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="cqm-4h-6N3">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="cqm-4h-6N3">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="logOutClicked:" destination="qRZ-7t-rIQ" id="HuP-6V-gTE"/>
                             </connections>
@@ -1114,7 +1115,6 @@ Consectetur adipiscing elit. In quis porta orci, id semper neque. Morbi vehicula
                     <connections>
                         <segue destination="W1B-hR-07n" kind="relationship" relationship="viewControllers" id="Rgd-ep-Ffs"/>
                         <segue destination="Su3-67-WUo" kind="relationship" relationship="viewControllers" id="WRr-KK-yAQ"/>
-                        <segue destination="kRl-gY-4x4" kind="relationship" relationship="viewControllers" id="arr-SI-0S8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dg8-nH-P0H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1474,43 +1474,11 @@ Consectetur adipiscing elit. In quis porta orci, id semper neque. Morbi vehicula
             </objects>
             <point key="canvasLocation" x="2588.4057971014495" y="1723.6607142857142"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="Vw3-Ab-eHk">
-            <objects>
-                <viewController id="kRl-gY-4x4" customClass="ProfileViewController" customModule="SpaceXFan" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GmQ-RJ-4Et">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfC-a3-nL9">
-                                <rect key="frame" x="171" y="392" width="73" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log out"/>
-                                <connections>
-                                    <action selector="logOutBtnClicked:" destination="kRl-gY-4x4" eventType="touchUpInside" id="nUo-gX-6Q3"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Jb6-p9-SIw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Jb6-p9-SIw" firstAttribute="bottom" secondItem="KfC-a3-nL9" secondAttribute="bottom" constant="390" id="9Pg-pn-8tQ"/>
-                            <constraint firstItem="KfC-a3-nL9" firstAttribute="leading" secondItem="Jb6-p9-SIw" secondAttribute="leading" constant="171" id="PV8-tH-jcN"/>
-                            <constraint firstItem="Jb6-p9-SIw" firstAttribute="trailing" secondItem="KfC-a3-nL9" secondAttribute="trailing" constant="170" id="Tp9-Uc-vnr"/>
-                            <constraint firstItem="KfC-a3-nL9" firstAttribute="top" secondItem="Jb6-p9-SIw" secondAttribute="top" constant="348" id="nha-1u-ZoP"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="uEQ-AR-zdE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jcy-KL-qU6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="907" y="2472"/>
-        </scene>
-        <!--Rockets-->
+        <!--Navigation Controller-->
         <scene sceneID="rvn-ee-Tdt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W1B-hR-07n" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rockets" id="qIP-gH-hp3"/>
+                    <tabBarItem key="tabBarItem" title="" image="barsTabBarElementsItemsEnabled-1" selectedImage="barsTabBarElementsItemsActivePressed" id="qIP-gH-hp3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xDp-79-i8j">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1525,11 +1493,11 @@ Consectetur adipiscing elit. In quis porta orci, id semper neque. Morbi vehicula
             </objects>
             <point key="canvasLocation" x="945" y="1012"/>
         </scene>
-        <!--Favorites-->
+        <!--Navigation Controller-->
         <scene sceneID="rY5-cT-C13">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Su3-67-WUo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" id="PD7-Gz-hSK"/>
+                    <tabBarItem key="tabBarItem" title="" image="barsTabBarElementsItemsEnabled" selectedImage="barsTabBarElementsItemsActivePressed-1" id="PD7-Gz-hSK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qSw-cp-PUc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1547,6 +1515,10 @@ Consectetur adipiscing elit. In quis porta orci, id semper neque. Morbi vehicula
     </scenes>
     <resources>
         <image name="6486482399SpacexFalconHeavyPngTransparentPng" width="308" height="159"/>
+        <image name="barsTabBarElementsItemsActivePressed" width="48" height="47"/>
+        <image name="barsTabBarElementsItemsActivePressed-1" width="48" height="47"/>
+        <image name="barsTabBarElementsItemsEnabled" width="48" height="47"/>
+        <image name="barsTabBarElementsItemsEnabled-1" width="48" height="47"/>
         <image name="buttonsIconsFavoritesActivePressed" width="50" height="50"/>
         <image name="buttonsIconsFavoritesEnable" width="50" height="50"/>
         <image name="formElementsIconsHidePasswordActive" width="20" height="20"/>

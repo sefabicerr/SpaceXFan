@@ -15,9 +15,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="tnc-wf-574">
-                    <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                    <rect key="frame" x="0.0" y="54" width="414" height="700"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="725" id="p7J-OU-JDf"/>
+                        <constraint firstAttribute="height" constant="700" id="p7J-OU-JDf"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -25,7 +25,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="tnc-wf-574" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GqC-fY-l2G"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="tnc-wf-574" secondAttribute="bottom" constant="49" id="q5d-z9-A04"/>
+                <constraint firstItem="tnc-wf-574" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="Xke-mC-XTt"/>
                 <constraint firstItem="tnc-wf-574" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="tKR-PB-dtQ"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>

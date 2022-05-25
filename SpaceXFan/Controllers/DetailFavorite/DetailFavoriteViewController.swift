@@ -12,7 +12,6 @@ class DetailFavoriteViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var colectionView: UICollectionView!
     @IBOutlet weak var headerImage: UIImageView!
-    @IBOutlet weak var favImage: UIImageView!
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var heightLbl: UILabel!
     @IBOutlet weak var diameterLbl: UILabel!
