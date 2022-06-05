@@ -13,7 +13,6 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
     //MARK: - IBOutlets
     @IBOutlet weak var collectionViewRocket: UICollectionView!
     
-    
     //MARK: - Vars
     var rocketList = [Rocket]()
     var defaultImageList = [UIImage]()
@@ -25,19 +24,19 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         createBackground(UIImage(named: "spaceXIOsBg")!, UIImageView(frame: self.view.frame))
         showAllRockets()
         registerCells()
+        createNavigationRightButton()
         defaultImageList = [UIImage(named: "6486482399SpacexFalconHeavyPngTransparentPng")!,UIImage(named: "spaceXDragon")!,UIImage(named: "spaceXStarship")!,UIImage(named: "6486482399SpacexFalconHeavyPngTransparentPng")!]
 
         createTabBarUI(itemAppearance: appearance.stackedLayoutAppearance)
         createTabBarUI(itemAppearance: appearance.inlineLayoutAppearance)
         createTabBarUI(itemAppearance: appearance.compactInlineLayoutAppearance)
-
         
     }
     
+    //MARK: - For tab bar design
     private func createTabBarUI(itemAppearance: UITabBarItemAppearance){
         itemAppearance.selected.iconColor = UIColor(named: "appColor")
         appearance.backgroundColor = UIColor.systemGray3
@@ -45,10 +44,21 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
         tabBarController?.tabBar.scrollEdgeAppearance = appearance
     }
     
-    @IBAction func logOutClicked(_ sender: Any) {
+    //MARK: - To create a navigation right button
+    private func createNavigationRightButton() {
+        let button = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(rightButtonClicked))
+        button.tintColor = .white
+        if User.currentUser() != nil {
+            button.title = "Log Out"
+        } else {
+            button.title = "Log In"
+        }
+        navigationItem.rightBarButtonItem = button
+    }
+    @objc func rightButtonClicked() {
         logOut()
     }
-    
+        
     //MARK: - For collectionviewcell set
    private func registerCells() {
        collectionViewRocket.register(UINib(nibName: RocketCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: RocketCollectionViewCell.identifier)
@@ -78,8 +88,8 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
     private func logOut() {
         do{
             try Auth.auth().signOut()
-            UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
-            UserDefaults.standard.synchronize()
+            //UserDefaults.standard.removeObject(forKey: kCURRENTUSER)
+            //UserDefaults.standard.synchronize()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let logInVC = storyboard.instantiateViewController(identifier: "LogInVC")
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(logInVC)
@@ -87,7 +97,6 @@ class RocketsViewController: UIViewController,BackgroundImageProtocol {
             print(error.localizedDescription)
         }
     }
-
 }
 
 extension RocketsViewController: UICollectionViewDelegate,UICollectionViewDataSource {

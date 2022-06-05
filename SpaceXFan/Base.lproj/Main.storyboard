@@ -238,15 +238,7 @@
                             <constraint firstItem="D4d-mh-e25" firstAttribute="bottom" secondItem="NJx-mH-Y70" secondAttribute="bottom" id="lG2-LL-6UW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Rockets" id="w9f-0m-pBh">
-                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="cqm-4h-6N3">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="logOutClicked:" destination="qRZ-7t-rIQ" id="HuP-6V-gTE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <size key="freeformSize" width="414" height="896"/>
+                    <navigationItem key="navigationItem" title="Rockets" id="w9f-0m-pBh"/>
                     <connections>
                         <outlet property="collectionViewRocket" destination="NJx-mH-Y70" id="1Ok-hJ-h4V"/>
                         <segue destination="y3H-Tk-xc7" kind="show" identifier="toRocketDetail" id="RM6-jN-BFR"/>
@@ -1129,14 +1121,14 @@ Consectetur adipiscing elit. In quis porta orci, id semper neque. Morbi vehicula
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cbf-fw-eUE">
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cbf-fw-eUE">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O3s-2u-WBA">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="7" minY="20" maxX="7" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                                 <connections>
@@ -1203,7 +1195,7 @@ Consectetur adipiscing elit. In quis porta orci, id semper neque. Morbi vehicula
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DQC-7T-xB4">
                                                         <rect key="frame" x="20" y="188" width="374" height="95"/>
-                                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="95" id="XDC-g7-Opa"/>
                                                         </constraints>
@@ -1399,7 +1391,7 @@ Consectetur adipiscing elit. In quis porta orci, id semper neque. Morbi vehicula
                                                     </stackView>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vxa-kb-RBy">
                                                         <rect key="frame" x="0.0" y="545" width="414" height="400"/>
-                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="400" id="IrV-bO-2b7"/>
                                                         </constraints>
@@ -1416,7 +1408,7 @@ Consectetur adipiscing elit. In quis porta orci, id semper neque. Morbi vehicula
                                                         </connections>
                                                     </collectionView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="DQC-7T-xB4" firstAttribute="top" secondItem="rWH-YT-HLg" secondAttribute="bottom" constant="8" symbolic="YES" id="5v0-Ld-lO6"/>
                                                     <constraint firstItem="TZB-0u-7aX" firstAttribute="top" secondItem="DQC-7T-xB4" secondAttribute="bottom" constant="20" id="7Ho-lC-Rvt"/>
@@ -1536,6 +1528,9 @@ Consectetur adipiscing elit. In quis porta orci, id semper neque. Morbi vehicula
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

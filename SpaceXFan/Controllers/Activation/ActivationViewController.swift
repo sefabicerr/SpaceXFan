@@ -21,7 +21,7 @@ class ActivationViewController: UIViewController,ProgressBarProtocol,BackgroundI
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.hidesBackButton = true
         progressBar = FlexibleSteppedProgressBar()
         createProgressBar(progressBar)
         createBackground(UIImage(named: "spaceXIOsBg")!, UIImageView(frame: self.view.frame))
@@ -54,14 +54,12 @@ class ActivationViewController: UIViewController,ProgressBarProtocol,BackgroundI
                     self.performSegue(withIdentifier: "goToAccountCreated", sender: nil)
                 } else {
                     self.alertMessage(titleInput: "Email Doğrulama Hatası",
-                                      messageInput: "Email doğrulanmamış. lütfen mailinize gönderilen doğrulama linkine tıklayın.")
+                                      messageInput: "Email doğrulanmamış. Lütfen mailinize gönderilen doğrulama linkine tıklayın.")
                 }
             }
         }
     }
-    
 }
-
 //MARK: - To implement flexible func
 extension ActivationViewController: FlexibleSteppedProgressBarDelegate {
     func progressBar(_ progressBar: FlexibleSteppedProgressBar,

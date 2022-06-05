@@ -53,7 +53,6 @@ class PrivacyViewController: UIViewController,ProgressBarProtocol,BackgroundImag
         }
     }
     
- 
     @IBAction func privacyBtnClicked(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
@@ -72,7 +71,6 @@ class PrivacyViewController: UIViewController,ProgressBarProtocol,BackgroundImag
     
     @IBAction func continueBtnClicked(_ sender: Any) {
         registerUser()
-        
     }
     
     //MARK: - Register User
@@ -82,15 +80,11 @@ class PrivacyViewController: UIViewController,ProgressBarProtocol,BackgroundImag
                 print("Kayıt başarılı")
             } else {
                 print("error:", error!.localizedDescription)
-                self.alertMessage(titleInput: "Hata", messageInput: "Email adresi zaten başka bir hesap tarafından kullanılıyor, lütfen başka bir hesap kullanın.")
+                self.alertMessage(titleInput: "Hata", messageInput: "Email adresi zaten kullanılıyor, lütfen başka bir hesap deneyiniz.")
             }
         }
     }
 }
-
-
-
-
 //MARK: - To implement flexible func
 extension PrivacyViewController: FlexibleSteppedProgressBarDelegate {
     func progressBar(_ progressBar: FlexibleSteppedProgressBar,

@@ -1,24 +1,18 @@
 //
-//  RocketCollectionViewCell.swift
+//  FavoriteCollectionViewCell.swift
 //  SpaceXFan
 //
-//  Created by Muhammed Sefa Biçer on 23.05.2022.
+//  Created by Muhammed Sefa Biçer on 5.06.2022.
 //
 
 import UIKit
 
-class RocketCollectionViewCell: UICollectionViewCell {
+class FavoriteCollectionViewCell: UICollectionViewCell {
 
-    static let identifier = String(describing: RocketCollectionViewCell.self)
-    
+    static let identifier = String(describing: FavoriteCollectionViewCell.self)
+
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var rocketImage: UIImageView!
-    @IBOutlet weak var backView: CardView!
-    
-    
-    func setup(_ rocket: Rocket) {
-        nameLbl.text = rocket.name
-    }
     
     func setupFavorite(_ rocket: Favorite) {
         nameLbl.text = rocket.rocketName
@@ -28,6 +22,4 @@ class RocketCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
-
 }

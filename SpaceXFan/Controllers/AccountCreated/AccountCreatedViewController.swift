@@ -27,7 +27,6 @@ class AccountCreatedViewController: UIViewController,ProgressBarProtocol,Backgro
         createProgressBar(progressBar)
         createBackground(UIImage(named: "spaceXIOsBg")!, UIImageView(frame: self.view.frame))
        
-        
     }
     
     @IBAction func logInBtnClicked(_ sender: Any) {

@@ -71,11 +71,9 @@ func saveImageInFirebase(imageData: Data, fileName: String, completion: @escapin
 func downloadImages(imageUrls: [String], completion: @escaping (_ images: [UIImage?]) -> Void){
     
     var imageArray: [UIImage] = []
-    
     var downloadCounter = 0
     
     for link in imageUrls {
-        
         let url = link.asUrl
         let downloadQueu = DispatchQueue(label: "imageDownloadQueu")
         
@@ -85,7 +83,6 @@ func downloadImages(imageUrls: [String], completion: @escaping (_ images: [UIIma
             
             if data != nil {
                 imageArray.append(UIImage(data: data! as Data)!)
-                
                 if downloadCounter == imageArray.count{
                     DispatchQueue.main.async {
                         completion(imageArray)

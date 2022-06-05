@@ -60,10 +60,11 @@
             </constraints>
             <size key="customSize" width="304" height="119"/>
             <connections>
+                <outlet property="backView" destination="lhZ-zP-8TK" id="J8N-op-9dP"/>
                 <outlet property="nameLbl" destination="wWw-ix-c3I" id="26N-0A-G8E"/>
                 <outlet property="rocketImage" destination="xrL-Le-6lz" id="a4H-j8-bVH"/>
             </connections>
-            <point key="canvasLocation" x="321.73913043478262" y="136.94196428571428"/>
+            <point key="canvasLocation" x="321.73913043478262" y="136.60714285714286"/>
         </collectionViewCell>
     </objects>
 </document>

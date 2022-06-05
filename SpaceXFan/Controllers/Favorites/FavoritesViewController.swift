@@ -28,7 +28,7 @@ class FavoritesViewController: UIViewController,AlertProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         if User.currentUser() == nil {
-            alertMessage(titleInput: "Default giriş", messageInput: "Favorileri görüntülemek için kullanıcı girişi gerekli") { action in
+            alertMessage(titleInput: "Default giriş", messageInput: "Favorileri görüntülemek için kullanıcı girişi gerekli.") { action in
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let logInVC = storyboard.instantiateViewController(identifier: "LogInVC")
                 (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(logInVC)
@@ -36,7 +36,6 @@ class FavoritesViewController: UIViewController,AlertProtocol {
         } else {
             getFavoriteRockets()
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,8 +47,8 @@ class FavoritesViewController: UIViewController,AlertProtocol {
     
     //MARK: - For collectionviewcell set
     private func registerCells() {
-        collectionView.register(UINib(nibName: RocketCollectionViewCell.identifier, bundle: nil),
-                                forCellWithReuseIdentifier: RocketCollectionViewCell.identifier)
+        collectionView.register(UINib(nibName: FavoriteCollectionViewCell.identifier, bundle: nil),
+                                forCellWithReuseIdentifier: FavoriteCollectionViewCell.identifier)
      }
     
     //MARK: - Download favorite items from firebase
@@ -73,7 +72,7 @@ extension FavoritesViewController: UICollectionViewDelegate,UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RocketCollectionViewCell.identifier, for: indexPath) as! RocketCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoriteCollectionViewCell.identifier, for: indexPath) as! FavoriteCollectionViewCell
         let rocket = rocketList[indexPath.row]
         cell.setupFavorite(rocket)
       

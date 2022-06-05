@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController,ProgressBarProtocol,BackgroundImage
         createProgressBar(progressBar)
         createBackground(UIImage(named: "spaceXIOsBg")!, UIImageView(frame: self.view.frame))
         
-        countryList = ["Turkey", "Germany", "Poland"]
+        countryList = ["Turkey", "Germany", "Poland", "Egypt"]
         createPicker()
     }
     
@@ -74,7 +74,6 @@ class SignUpViewController: UIViewController,ProgressBarProtocol,BackgroundImage
             alertMessage(titleInput: "Boş Alan Hatası", messageInput: "Lütfen tüm alanları doldurduğunuzdan emin olun.")
         }
     }
-    
     //MARK: - Textfield have text control
     private func textFieldHaveText() -> Bool {
         return (nameTextField.text != "" &&
@@ -90,7 +89,7 @@ class SignUpViewController: UIViewController,ProgressBarProtocol,BackgroundImage
         pickerView.dataSource = self
         countryTextField.inputView = pickerView
         let toolBar = UIToolbar()
-        toolBar.tintColor = UIColor.red
+        toolBar.tintColor = UIColor(named: "appColor")
         toolBar.sizeToFit()
         
         let saveBtn = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(self.saveBtnClicked))
@@ -110,9 +109,6 @@ class SignUpViewController: UIViewController,ProgressBarProtocol,BackgroundImage
     @objc func saveBtnClicked(){
         view.endEditing(true)
     }
-
-    
-    
 }
 
 //MARK: - To implement flexible func

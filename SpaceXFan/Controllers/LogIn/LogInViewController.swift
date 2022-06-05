@@ -26,7 +26,6 @@ class LogInViewController: UIViewController,BackgroundImageProtocol,AlertProtoco
         createBackground(UIImage(named: "welcomePageBg")!,
                          UIImageView(frame: self.view.frame))
         
-        
     }
     
     @IBAction func showPasswordBtnClicked(_ sender: UIButton) {
@@ -49,7 +48,6 @@ class LogInViewController: UIViewController,BackgroundImageProtocol,AlertProtoco
         } else {
             alertMessage(titleInput: "Hata", messageInput: "Email ya da şifre alanı boş olamaz.")
         }
-        
     }
     
     //MARK: - For to login without being a member
@@ -101,12 +99,6 @@ class LogInViewController: UIViewController,BackgroundImageProtocol,AlertProtoco
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let tabBarController = storyboard.instantiateViewController(identifier: "tabBarController")
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabBarController)
-        
-        /*let controller = self.storyboard?.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
-        controller.modalPresentationStyle = .fullScreen
-        controller.modalTransitionStyle = .coverVertical
-        present(controller, animated: true, completion: nil)*/
-
     } 
 }
 

@@ -89,8 +89,6 @@ class Favorite {
 
 //MARK: Save items func
 func saveFavoriteToFirebase(favorite: Favorite) {
-    //let docId = FirebaseReference(.Favorite).document().documentID
-    //favorite.favId = docId
     FirebaseReference(.Favorite).document(favorite.favId!).setData(favoriteDictionaryFrom(favorite: favorite) as! [String:Any]) { (error) in
         if error != nil {
             print("Favori kayıt hatası \(error!.localizedDescription)")
@@ -118,15 +116,12 @@ func downloadItemsWithIdFromFirebase(with userId: String, with favId: String, co
 
 //MARK: Download Item Func
 func downloadItemsFromFirebase(with id: String, completion: @escaping (_ favoriteArray: [Favorite]) -> Void){
-    
     var favoriteArray: [Favorite] = []
     FirebaseReference(.Favorite).whereField(kUSERID, isEqualTo: id).getDocuments { (snapshot, error) in
-        
         guard let snapshot = snapshot else {
             completion(favoriteArray)
             return
         }
-        
         if !snapshot.isEmpty {
             
             for favoriteDict in snapshot.documents{

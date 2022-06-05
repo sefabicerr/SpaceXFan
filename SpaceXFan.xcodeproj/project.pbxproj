@@ -41,12 +41,13 @@
 		646BCD062839CC6D00BD6862 /* RocketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646BCD052839CC6D00BD6862 /* RocketsViewController.swift */; };
 		64AB2B13283C2BF800069866 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AB2B12283C2BF800069866 /* FavoritesViewController.swift */; };
 		64ACAA7C283E46BA00E5900D /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ACAA7B283E46BA00E5900D /* EmptyBackgroundView.swift */; };
-		64ACAA7E283E5AF600E5900D /* Upcoming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ACAA7D283E5AF600E5900D /* Upcoming.swift */; };
 		64ACAAC2283EBC3200E5900D /* color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64ACAAC1283EBC3200E5900D /* color.xcassets */; };
 		64D99494283A9D8800DA9C02 /* ActivationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D99493283A9D8800DA9C02 /* ActivationViewController.swift */; };
 		64D99498283AA3E100DA9C02 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D99497283AA3E100DA9C02 /* PrivacyViewController.swift */; };
 		64D9949A283AB55700DA9C02 /* AccountCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D99499283AB55700DA9C02 /* AccountCreatedViewController.swift */; };
 		64DC7B26283AE969000C2B03 /* AlertViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DC7B25283AE969000C2B03 /* AlertViewProtocol.swift */; };
+		64E0EC5C284D471B00B8A115 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0EC5A284D471B00B8A115 /* FavoriteCollectionViewCell.swift */; };
+		64E0EC5D284D471B00B8A115 /* FavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64E0EC5B284D471B00B8A115 /* FavoriteCollectionViewCell.xib */; };
 		AE01B97DB10B86984A09A583 /* Pods_SpaceXFan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA0D207CC3B5EA34BC7A11F /* Pods_SpaceXFan.framework */; };
 		C42DF1B1FB914B0232B1ED5A /* Pods_SpaceXFan_SpaceXFanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5291CDFF018513EE34BF74E /* Pods_SpaceXFan_SpaceXFanUITests.framework */; };
 		F46F7114DE7F789CAE820D41 /* Pods_SpaceXFanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DCBB798F2A5731A7075C122 /* Pods_SpaceXFanTests.framework */; };
@@ -113,12 +114,13 @@
 		646BCD052839CC6D00BD6862 /* RocketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketsViewController.swift; sourceTree = "<group>"; };
 		64AB2B12283C2BF800069866 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		64ACAA7B283E46BA00E5900D /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
-		64ACAA7D283E5AF600E5900D /* Upcoming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upcoming.swift; sourceTree = "<group>"; };
 		64ACAAC1283EBC3200E5900D /* color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = color.xcassets; sourceTree = "<group>"; };
 		64D99493283A9D8800DA9C02 /* ActivationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivationViewController.swift; sourceTree = "<group>"; };
 		64D99497283AA3E100DA9C02 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		64D99499283AB55700DA9C02 /* AccountCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreatedViewController.swift; sourceTree = "<group>"; };
 		64DC7B25283AE969000C2B03 /* AlertViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewProtocol.swift; sourceTree = "<group>"; };
+		64E0EC5A284D471B00B8A115 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		64E0EC5B284D471B00B8A115 /* FavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
 		8DCBB798F2A5731A7075C122 /* Pods_SpaceXFanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceXFanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC97AAE693964E6D1022F51E /* Pods-SpaceXFan-SpaceXFanUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceXFan-SpaceXFanUITests.debug.xcconfig"; path = "Target Support Files/Pods-SpaceXFan-SpaceXFanUITests/Pods-SpaceXFan-SpaceXFanUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DEC2D9FE78B9A28FF27EB8D0 /* Pods-SpaceXFanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceXFanTests.release.xcconfig"; path = "Target Support Files/Pods-SpaceXFanTests/Pods-SpaceXFanTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,7 +203,6 @@
 				642AC83A283B042900B151A6 /* User.swift */,
 				642AC856283BA75600B151A6 /* Rocket.swift */,
 				64057606283C071900BD2160 /* Favorite.swift */,
-				64ACAA7D283E5AF600E5900D /* Upcoming.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -228,6 +229,7 @@
 		642AC846283B9DFB00B151A6 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				64E0EC59284D470100B8A115 /* FavoriteCell */,
 				645E403D283D81580003DDFA /* EmptyBackground */,
 				64057601283C00B400BD2160 /* DetailCell */,
 				642AC84C283B9E8600B151A6 /* CardView */,
@@ -313,7 +315,6 @@
 		646BCCD32839BB5B00BD6862 /* SpaceXFan */ = {
 			isa = PBXGroup;
 			children = (
-				642AC83C283B05C900B151A6 /* GoogleService-Info.plist */,
 				642AC839283B041300B151A6 /* Models */,
 				642AC846283B9DFB00B151A6 /* Custom Views */,
 				646BCD042839CC3C00BD6862 /* Controllers */,
@@ -321,13 +322,13 @@
 				64186C63283A67450076399C /* Extensions */,
 				642AC83E283B07B900B151A6 /* Network */,
 				642AC841283B084300B151A6 /* Helpers */,
+				64E0EC58284D371600B8A115 /* Resources */,
 				646BCCD42839BB5B00BD6862 /* AppDelegate.swift */,
 				646BCCD62839BB5B00BD6862 /* SceneDelegate.swift */,
 				646BCCDA2839BB5B00BD6862 /* Main.storyboard */,
-				646BCCDD2839BB5D00BD6862 /* Assets.xcassets */,
-				64ACAAC1283EBC3200E5900D /* color.xcassets */,
 				646BCCDF2839BB5D00BD6862 /* LaunchScreen.storyboard */,
 				646BCCE22839BB5D00BD6862 /* Info.plist */,
+				642AC83C283B05C900B151A6 /* GoogleService-Info.plist */,
 			);
 			path = SpaceXFan;
 			sourceTree = "<group>";
@@ -395,6 +396,24 @@
 				64D99499283AB55700DA9C02 /* AccountCreatedViewController.swift */,
 			);
 			path = AccountCreated;
+			sourceTree = "<group>";
+		};
+		64E0EC58284D371600B8A115 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				646BCCDD2839BB5D00BD6862 /* Assets.xcassets */,
+				64ACAAC1283EBC3200E5900D /* color.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		64E0EC59284D470100B8A115 /* FavoriteCell */ = {
+			isa = PBXGroup;
+			children = (
+				64E0EC5A284D471B00B8A115 /* FavoriteCollectionViewCell.swift */,
+				64E0EC5B284D471B00B8A115 /* FavoriteCollectionViewCell.xib */,
+			);
+			path = FavoriteCell;
 			sourceTree = "<group>";
 		};
 		934CB10E501C7A1AEA36B40F /* Frameworks */ = {
@@ -536,6 +555,7 @@
 				646BCCDE2839BB5D00BD6862 /* Assets.xcassets in Resources */,
 				642AC852283BA41700B151A6 /* RocketCollectionViewCell.xib in Resources */,
 				642AC83D283B05C900B151A6 /* GoogleService-Info.plist in Resources */,
+				64E0EC5D284D471B00B8A115 /* FavoriteCollectionViewCell.xib in Resources */,
 				646BCCDC2839BB5B00BD6862 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,7 +694,6 @@
 				64186C6B283A79AA0076399C /* SignUpViewController.swift in Sources */,
 				6405760B283C182A00BD2160 /* FirebaseImageDownloader.swift in Sources */,
 				642AC843283B0A8400B151A6 /* Constants.swift in Sources */,
-				64ACAA7E283E5AF600E5900D /* Upcoming.swift in Sources */,
 				645457D9283A38B10034D4A3 /* LogInViewController.swift in Sources */,
 				646BCD062839CC6D00BD6862 /* RocketsViewController.swift in Sources */,
 				64057607283C071900BD2160 /* Favorite.swift in Sources */,
@@ -691,6 +710,7 @@
 				645457E0283A45370034D4A3 /* BackgroundImageProtocol.swift in Sources */,
 				646BCCD72839BB5B00BD6862 /* SceneDelegate.swift in Sources */,
 				642AC84E283B9E9900B151A6 /* CardView.swift in Sources */,
+				64E0EC5C284D471B00B8A115 /* FavoriteCollectionViewCell.swift in Sources */,
 				642AC855283BA69C00B151A6 /* DetailRocketViewController.swift in Sources */,
 				64D9949A283AB55700DA9C02 /* AccountCreatedViewController.swift in Sources */,
 			);

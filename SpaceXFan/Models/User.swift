@@ -27,7 +27,6 @@ class User {
     }
     
     init(dictionary: NSDictionary){
-        //userId = dictionary[kUSERID] as! String
         
         if let id = dictionary[kUSERID] {
             userId = id as! String
@@ -53,8 +52,6 @@ class User {
             password = userPassword as! String
         } else { password = "" }
     }
-    //sefaabicerr@gmail.com
-    
     
     //MARK: - Return current user
     class func currentId() -> String {
@@ -69,10 +66,6 @@ class User {
         }
         return nil
     }
-
-
-    
-    
     //MARK: - For register user func
     class func registerUserWith(email: String, password: String,
                                 completion: @escaping (_ error: Error?) -> Void) {
@@ -87,7 +80,6 @@ class User {
             }
         }
     }
-    
     
     //MARK: - Login Func
     class func loginUserWith(email: String, password: String,
@@ -133,11 +125,11 @@ func downloadUserFromFirebase(userId: String, email: String) {
             saveUserLocally(userDictionary: snapshot.data()! as NSDictionary)
         } else {
             //kullanıcı yok, firebase yeni kullanıcı olarak ekle
-            let currentUser = UserDefaults.standard.object(forKey: kCURRENTUSER)
+            /*let currentUser = UserDefaults.standard.object(forKey: kCURRENTUSER)
             let user = User.init(dictionary: currentUser as! NSDictionary)
             user.userId = userId
             saveUserLocally(userDictionary: userDictionaryFrom(user: user))
-            saveUserToFirebase(user: user)
+            saveUserToFirebase(user: user)*/
         }
     }
 }
