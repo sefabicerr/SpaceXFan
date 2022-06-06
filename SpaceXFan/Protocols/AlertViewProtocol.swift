@@ -16,6 +16,7 @@ protocol AlertProtocol {
 extension AlertProtocol where Self: AlertProtocol & UIViewController {
     func alertMessage(titleInput: String = "", messageInput: String = "", doneAction: AlertActionHandler? = nil) {
         let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: .alert)
+        alert.view.tintColor = UIColor(named: "appColor")
         let okButton = UIAlertAction(title: "Tamam", style: .default, handler: doneAction)
         alert.addAction(okButton)
         self.present(alert, animated: true, completion: nil)

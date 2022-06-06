@@ -125,11 +125,11 @@ func downloadUserFromFirebase(userId: String, email: String) {
             saveUserLocally(userDictionary: snapshot.data()! as NSDictionary)
         } else {
             //kullanıcı yok, firebase yeni kullanıcı olarak ekle
-            /*let currentUser = UserDefaults.standard.object(forKey: kCURRENTUSER)
+            let currentUser = UserDefaults.standard.object(forKey: kCURRENTUSER)
             let user = User.init(dictionary: currentUser as! NSDictionary)
             user.userId = userId
             saveUserLocally(userDictionary: userDictionaryFrom(user: user))
-            saveUserToFirebase(user: user)*/
+            saveUserToFirebase(user: user)
         }
     }
 }
